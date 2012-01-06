@@ -1,6 +1,6 @@
 Name: kolourpaint
 Summary: kolourpaint
-Version: 4.7.95
+Version: 4.7.97
 Release: 1
 Epoch: 2
 Group: Graphical desktop/KDE
