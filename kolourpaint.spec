@@ -1,12 +1,12 @@
 Name: kolourpaint
 Summary: kolourpaint
-Version: 4.8.1
+Version: 4.8.2
 Release: 1
 Epoch: 2
 Group: Graphical desktop/KDE
 License: GPLv2 LGPLv2 GFDL
 URL: http://www.kde.org/applications/graphics/kolourpaint/
-Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/%name-%version.tar.bz2
+Source: ftp://ftp.kde.org/pub/kde/stable/%version/src/%name-%version.tar.xz
 BuildRequires: kdelibs4-devel >= 2:%{version}
 BuildRequires: qimageblitz-devel
 
