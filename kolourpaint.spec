@@ -1,25 +1,25 @@
 Name:		kolourpaint
 Summary:	A free, easy-to-use paint program for KDE
-Version: 4.8.97
-Release: 1
+Version:	4.8.97
+Release:	1
 Epoch:		2
 Group:		Graphical desktop/KDE
 License:	GPLv2 LGPLv2 GFDL
 URL:		http://www.kde.org/applications/graphics/kolourpaint/
 Source:		ftp://ftp.kde.org/pub/kde/unstable/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	kdelibs4-devel >= 2:%{version}
-BuildRequires:	qimageblitz-devel
+BuildRequires:	kdelibs4-devel
+BuildRequires:	pkgconfig(qimageblitz)
 
 %description
 KolourPaint is a free, easy-to-use paint program for KDE.
 
 %files
-%{_kde_bindir}/kolourpaint
-%{_kde_datadir}/applications/kde4/kolourpaint.desktop
-%{_kde_appsdir}/kolourpaint
-%{_kde_iconsdir}/hicolor/*/apps/kolourpaint.*
 %doc COPYING COPYING.LIB COPYING.DOC
 %doc %{_kde_docdir}/HTML/en/kolourpaint/
+%{_kde_bindir}/kolourpaint
+%{_kde_applicationsdir}/kolourpaint.desktop
+%{_kde_appsdir}/kolourpaint
+%{_kde_iconsdir}/hicolor/*/apps/kolourpaint.*
 
 #-----------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ Runtime library for Kolourpaint.
 %package devel
 Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
-Requires:	kdelibs4-devel >= 2:%{version}
+Requires:	kdelibs4-devel
 Requires:	%{libkolourpaint_lgpl} = %{EVRD}
 Conflicts:	kdegraphics4-devel < 2:4.6.90
 
