@@ -1,6 +1,6 @@
 Name:		kolourpaint
 Summary:	A free, easy-to-use paint program for KDE
-Version:	4.9.4
+Version:	4.10.0
 Release:	1
 Epoch:		2
 Group:		Graphical desktop/KDE
@@ -65,6 +65,9 @@ based on %{name}.
 %makeinstall_std -C build
 
 %changelog
+* Thu Feb 07 2013 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.10.0-1
+- New version 4.10.0
+
 * Wed Dec 05 2012 Andrey Bondrov <andrey.bondrov@rosalab.ru> 2:4.9.4-1
 - New version 4.9.4
 
