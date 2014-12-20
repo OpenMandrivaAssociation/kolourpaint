@@ -1,12 +1,12 @@
 Summary:	A free, easy-to-use paint program for KDE
 Name:		kolourpaint
-Version:	4.14.3
-Release:	2
+Version:	14.12.0
+Release:	1
 Epoch:		2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://www.kde.org/applications/graphics/kolourpaint/
-Source0:	ftp://ftp.kde.org/pub/kde/stable/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	ftp://ftp.kde.org/pub/kde/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	kdelibs4-devel
 BuildRequires:	pkgconfig(qimageblitz) < 5.0.0
 
