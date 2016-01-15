@@ -17,9 +17,9 @@ KolourPaint is a free, easy-to-use paint program for KDE.
 %doc COPYING COPYING.LIB COPYING.DOC
 %doc %{_kde_docdir}/HTML/en/kolourpaint/
 %{_kde_applicationsdir}/kolourpaint.desktop
-%{_kde_appsdir}/org.kde.kolourpaint.appdata.xml
+%{_kde_appsdir}/kolourpaint
+%{_datadir}/appdata/org.kde.kolourpaint.appdata.xml
 %{_kde_bindir}/kolourpaint
-%{_kde_datadir}/appdata/kolourpaint.appdata.xml
 %{_kde_iconsdir}/hicolor/*/apps/kolourpaint.*
 
 #----------------------------------------------------------------------------
