@@ -1,6 +1,6 @@
 Summary:	A free, easy-to-use paint program for KDE
 Name:		kolourpaint
-Version:	16.08.2
+Version:	16.08.3
 Release:	1
 Epoch:		2
 License:	GPLv2+
