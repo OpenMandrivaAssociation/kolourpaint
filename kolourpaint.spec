@@ -8,7 +8,7 @@ Group:		Graphical desktop/KDE
 Url:		http://www.kde.org/applications/graphics/kolourpaint/
 Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
-BuildRequires:	cmake(KDELibs4Support)
+BuildRequires:	cmake(KF5KDELibs4Support)
 BuildRequires:	cmake(KF5Sane)
 BuildRequires:	pkgconfig(Qt5Core)
 BuildRequires:	pkgconfig(Qt5Widgets)
