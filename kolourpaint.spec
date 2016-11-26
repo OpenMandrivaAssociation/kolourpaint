@@ -7,14 +7,12 @@ License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://www.kde.org/applications/graphics/kolourpaint/
 Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
-BuildRequires:	kdelibs-devel
-BuildRequires:	pkgconfig(qimageblitz) < 5.0.0
+BuildRequires:	cmake(ECM)
 
 %description
 KolourPaint is a free, easy-to-use paint program for KDE.
 
 %files
-%doc COPYING COPYING.LIB COPYING.DOC
 %doc %{_kde_docdir}/HTML/en/kolourpaint/
 %{_kde_applicationsdir}/kolourpaint.desktop
 %{_kde_appsdir}/kolourpaint
@@ -43,7 +41,6 @@ Runtime library for Kolourpaint.
 Summary:	Devel stuff for %{name}
 Group:		Development/KDE and Qt
 Requires:	%{libkolourpaint_lgpl} = %{EVRD}
-Requires:	kdelibs-devel
 Conflicts:	kdegraphics4-devel < 2:4.6.90
 
 %description devel
@@ -57,11 +54,10 @@ based on %{name}.
 
 %prep
 %setup -q
+%cmake_kde5
 
 %build
-%cmake_kde4 \
-	-DCMAKE_MINIMUM_REQUIRED_VERSION=3.1
-%make
+%ninja -C build
 
 %install
-%makeinstall_std -C build
+%ninja_install -C build
