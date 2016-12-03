@@ -17,27 +17,29 @@ BuildRequires:	pkgconfig(Qt5Widgets)
 KolourPaint is a free, easy-to-use paint program for KDE.
 
 %files
-%doc %{_kde_docdir}/HTML/en/kolourpaint/
-%{_kde_applicationsdir}/kolourpaint.desktop
-%{_kde_appsdir}/kolourpaint
-%{_datadir}/appdata/kolourpaint.appdata.xml
-%{_kde_bindir}/kolourpaint
-%{_kde_iconsdir}/hicolor/*/apps/kolourpaint.*
+%doc %{_docdir}/HTML/en/kolourpaint/
+%{_datadir}/applications/org.kde.kolourpaint.desktop
+%{_datadir}/kolourpaint
+%{_datadir}/metainfo/org.kde.kolourpaint.appdata.xml
+%{_datadir}/kxmlgui5/kolourpaint
+%{_bindir}/kolourpaint
+%{_iconsdir}/hicolor/*/apps/kolourpaint.*
 
 #----------------------------------------------------------------------------
 
-%define kolourpaint_lgpl_major 4
+%define kolourpaint_lgpl_major 5
 %define libkolourpaint_lgpl %mklibname kolourpaint_lgpl %{kolourpaint_lgpl_major}
 
 %package -n %{libkolourpaint_lgpl}
 Summary:	Runtime library for Kolourpaint
 Group:		System/Libraries
+Obsoletes:	%{mklibname kolourpaint_lgpl 4} < 2:16.08.3
 
 %description -n %{libkolourpaint_lgpl}
 Runtime library for Kolourpaint.
 
 %files -n %{libkolourpaint_lgpl}
-%{_kde_libdir}/libkolourpaint_lgpl.so.%{kolourpaint_lgpl_major}*
+%{_libdir}/libkolourpaint_lgpl.so.%{kolourpaint_lgpl_major}*
 
 #----------------------------------------------------------------------------
 
@@ -52,7 +54,7 @@ This package contains header files needed if you wish to build applications
 based on %{name}.
 
 %files devel
-%{_kde_libdir}/libkolourpaint_lgpl.so
+%{_libdir}/libkolourpaint_lgpl.so
 
 #----------------------------------------------------------------------------
 
