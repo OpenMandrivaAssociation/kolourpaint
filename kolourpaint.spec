@@ -1,12 +1,13 @@
+%define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Summary:	A free, easy-to-use paint program for KDE
 Name:		kolourpaint
-Version:	16.12.2
+Version:	17.04.0
 Release:	1
 Epoch:		2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		http://www.kde.org/applications/graphics/kolourpaint/
-Source0:	http://download.kde.org/stable/applications/%{version}/src/%{name}-%{version}.tar.xz
+Source0:	http://download.kde.org/%{stable}/applications/%{version}/src/%{name}-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KF5KDELibs4Support)
 BuildRequires:	cmake(KF5Sane)
@@ -16,8 +17,7 @@ BuildRequires:	pkgconfig(Qt5Widgets)
 %description
 KolourPaint is a free, easy-to-use paint program for KDE.
 
-%files
-%doc %{_docdir}/HTML/en/kolourpaint/
+%files -f %{name}.lang
 %{_datadir}/applications/org.kde.kolourpaint.desktop
 %{_datadir}/kolourpaint
 %{_datadir}/metainfo/org.kde.kolourpaint.appdata.xml
@@ -67,3 +67,4 @@ based on %{name}.
 
 %install
 %ninja_install -C build
+%find_lang %{name} --with-html
