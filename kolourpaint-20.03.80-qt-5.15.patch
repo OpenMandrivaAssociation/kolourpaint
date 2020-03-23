@@ -1,0 +1,11 @@
+diff -up kolourpaint-20.03.80/layers/selections/image/kpEllipticalImageSelection.cpp.omv~ kolourpaint-20.03.80/layers/selections/image/kpEllipticalImageSelection.cpp
+--- kolourpaint-20.03.80/layers/selections/image/kpEllipticalImageSelection.cpp.omv~	2020-03-23 22:13:39.515134019 +0100
++++ kolourpaint-20.03.80/layers/selections/image/kpEllipticalImageSelection.cpp	2020-03-23 22:13:44.433124256 +0100
+@@ -32,6 +32,7 @@
+ #include "layers/selections/image/kpEllipticalImageSelection.h"
+ 
+ #include <QPainter>
++#include <QPainterPath>
+ #include <QRegion>
+ 
+ 
