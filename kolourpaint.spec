@@ -1,8 +1,8 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Summary:	A free, easy-to-use paint program for KDE
 Name:		kolourpaint
-Version:	22.04.1
-Release:	2
+Version:	22.04.2
+Release:	1
 Epoch:		2
 License:	GPLv2+
 Group:		Graphical desktop/KDE
