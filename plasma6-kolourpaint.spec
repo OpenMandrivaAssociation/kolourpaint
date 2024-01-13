@@ -16,7 +16,7 @@ BuildRequires:  cmake(Qt6QmlCore)
 BuildRequires:  cmake(Qt6QmlNetwork)
 BuildRequires:  qt6-qtbase-theme-gtk3
 BuildRequires:	cmake(Qt6Widgets)
-BuildRequires:	cmake(F6DocTools)
+BuildRequires:	cmake(KF6DocTools)
 BuildRequires:	cmake(KF6I18n)
 BuildRequires:	cmake(KF6GuiAddons)
 BuildRequires:	cmake(KF6WidgetsAddons)
