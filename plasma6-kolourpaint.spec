@@ -5,12 +5,17 @@ Version:	24.01.90
 Release:	1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
-Url:		http://www.kde.org/applications/graphics/kolourpaint/
-Source0:	http://download.kde.org/%{stable}/release-service/%{version}/src/kolourpaint-%{version}.tar.xz
+Url:		https://www.kde.org/applications/graphics/kolourpaint/
+Source0:	https://download.kde.org/%{stable}/release-service/%{version}/src/kolourpaint-%{version}.tar.xz
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KSaneCore6)
-BuildRequires:	pkgconfig(Qt6Core)
-BuildRequires:	pkgconfig(Qt6Widgets)
+BuildRequires:	cmake(Qt6Core)
+BuildRequires:	cmake(Qt6PrintSupport)
+BuildRequires:  cmake(Qt6Qml)
+BuildRequires:  cmake(Qt6QmlCore)
+BuildRequires:  cmake(Qt6QmlNetwork)
+BuildRequires:  qt6-qtbase-theme-gtk3
+BuildRequires:	cmake(Qt6Widgets)
 
 %description
 KolourPaint is a free, easy-to-use paint program for KDE.
