@@ -1,12 +1,19 @@
+%define git 20240218
+%define gitbranch release/24.02
+%define gitbranchd %(echo %{gitbranch} |sed -e "s,/,-,g")
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Summary:	A free, easy-to-use paint program for KDE
 Name:		plasma6-kolourpaint
-Version:	24.01.95
-Release:	1
+Version:	24.01.96
+Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
 Url:		https://www.kde.org/applications/graphics/kolourpaint/
+%if 0%{?git:1}
+Source0:	https://invent.kde.org/graphics/kolourpaint/-/archive/%{gitbranch}/kolourpaint-%{gitbranchd}.tar.bz2#/kolourpaint-%{git}.tar.bz2
+%else
 Source0:	https://download.kde.org/%{stable}/release-service/%{version}/src/kolourpaint-%{version}.tar.xz
+%endif
 BuildRequires:	cmake(ECM)
 BuildRequires:	cmake(KSaneCore6)
 BuildRequires:	cmake(Qt6Core)
@@ -39,7 +46,7 @@ KolourPaint is a free, easy-to-use paint program for KDE.
 #----------------------------------------------------------------------------
 
 %prep
-%autosetup -p1 -n kolourpaint-%{?git:master}%{!?git:%{version}}
+%autosetup -p1 -n kolourpaint-%{?git:%{gitbranchd}}%{!?git:%{version}}
 %cmake \
 	-DQT_MAJOR_VERSION=6 \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
