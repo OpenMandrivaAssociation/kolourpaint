@@ -1,7 +1,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Summary:	A free, easy-to-use paint program for KDE
 Name:		kolourpaint
-Version:	23.08.5
+Version:	24.02.0
 Release:	1
 Epoch:		2
 License:	GPLv2+
@@ -21,7 +21,6 @@ KolourPaint is a free, easy-to-use paint program for KDE.
 %{_datadir}/applications/org.kde.kolourpaint.desktop
 %{_datadir}/kolourpaint
 %{_datadir}/metainfo/org.kde.kolourpaint.appdata.xml
-%{_datadir}/kxmlgui5/kolourpaint
 %{_bindir}/kolourpaint
 %{_iconsdir}/hicolor/*/apps/kolourpaint.*
 
