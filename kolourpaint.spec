@@ -4,7 +4,7 @@
 %define stable %([ "`echo %{version} |cut -d. -f3`" -ge 80 ] && echo -n un; echo -n stable)
 Summary:	A free, easy-to-use paint program for KDE
 Name:		kolourpaint
-Version:	25.04.0
+Version:	25.04.3
 Release:	%{?git:0.%{git}.}1
 License:	GPLv2+
 Group:		Graphical desktop/KDE
@@ -32,10 +32,15 @@ BuildRequires:	cmake(KF6XmlGui)
 BuildRequires:	cmake(KF6TextWidgets)
 BuildRequires:	cmake(KF6JobWidgets)
 
+%rename plasma6-kolourpaint
+
+BuildSystem:	cmake
+BuildOption:	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON
+
 %description
 KolourPaint is a free, easy-to-use paint program for KDE.
 
-%files -f kolourpaint.lang
+%files -f %{name}.lang
 %{_datadir}/applications/org.kde.kolourpaint.desktop
 %{_datadir}/kolourpaint
 %{_datadir}/metainfo/org.kde.kolourpaint.appdata.xml
@@ -43,18 +48,3 @@ KolourPaint is a free, easy-to-use paint program for KDE.
 %{_iconsdir}/hicolor/*/apps/kolourpaint.*
 %{_libdir}/libkolourpaint_lgpl.so*
 
-#----------------------------------------------------------------------------
-
-%prep
-%autosetup -p1 -n kolourpaint-%{?git:%{gitbranchd}}%{!?git:%{version}}
-%cmake \
-	-DQT_MAJOR_VERSION=6 \
-	-DKDE_INSTALL_USE_QT_SYS_PATHS:BOOL=ON \
-	-G Ninja
-
-%build
-%ninja -C build
-
-%install
-%ninja_install -C build
-%find_lang kolourpaint --with-html
